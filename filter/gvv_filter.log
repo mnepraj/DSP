@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.19)  28 MAR 2024 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.19)  28 MAR 2024 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,58 +904,65 @@ Package pdftex.def Info: figs/ynDFTmatrix.png  used on input line 647.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/xnexercise.png, id=459, 867.24pt x 433.62pt>
+(./codes/filtfiltreplaced.py
+LaTeX Font Info:    Trying to load font information for OML+txr on input line 1
+0.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxr.fd
+File: omltxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
+(Font)              Font shape `OML/txmi/m/it' tried instead on input line 10.
+ [6 <./figs/ynIFFTverified.png> <./figs/ynDFTmatrix.png>])
+<figs/xnexercise.png, id=495, 867.24pt x 433.62pt>
 File: figs/xnexercise.png Graphic file (type png)
 <use figs/xnexercise.png>
-Package pdftex.def Info: figs/xnexercise.png  used on input line 689.
+Package pdftex.def Info: figs/xnexercise.png  used on input line 691.
 (pdftex.def)             Requested size: 252.0pt x 125.998pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6 <./figs/ynIFFTverified.png> <./figs/ynDFTmatrix.png>]
-<figs/hnexercise.png, id=486, 462.528pt x 346.896pt>
+<figs/hnexercise.png, id=497, 462.528pt x 346.896pt>
 File: figs/hnexercise.png Graphic file (type png)
 <use figs/hnexercise.png>
-Package pdftex.def Info: figs/hnexercise.png  used on input line 705.
+Package pdftex.def Info: figs/hnexercise.png  used on input line 707.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/ynexercise.png, id=487, 1156.32pt x 578.16pt>
+<figs/ynexercise.png, id=498, 1156.32pt x 578.16pt>
 File: figs/ynexercise.png Graphic file (type png)
 <use figs/ynexercise.png>
-Package pdftex.def Info: figs/ynexercise.png  used on input line 720.
+Package pdftex.def Info: figs/ynexercise.png  used on input line 722.
 (pdftex.def)             Requested size: 252.0pt x 125.99579pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--737
+Underfull \hbox (badness 10000) in paragraph at lines 734--739
 \OT1/txr/bx/n/12 Solution: \OT1/txr/m/n/12 The given but-ter-worth fil-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--737
+Underfull \hbox (badness 10000) in paragraph at lines 734--739
 \OT1/txr/m/n/12 is low pass with or-der=4 and cutoff-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 739.
-[7 <./figs/xnexercise.png> <./figs/hnexercise.png> <./figs/ynexercise.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 739.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
+[7 <./figs/xnexercise.png> <./figs/hnexercise.png>] [8
 
+ <./figs/ynexercise.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
 (./gvv_filter.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 739.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 739.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 741.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
 Package rerunfilecheck Info: File `gvv_filter.out' has not changed.
 (rerunfilecheck)             Checksum: 2154E13812F1013637C6C87519C101FD;346.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 739.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
  ) 
 Here is how much of TeX's memory you used:
- 12989 strings out of 481239
- 194195 string characters out of 5920377
- 703617 words of memory out of 5000000
- 27824 multiletter control sequences out of 15000+600000
+ 13062 strings out of 481239
+ 195345 string characters out of 5920377
+ 799617 words of memory out of 5000000
+ 27851 multiletter control sequences out of 15000+600000
  606922 words of font info for 183 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,17n,42p,240b,1960s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,42p,240b,1949s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -967,10 +974,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gvv_filter.pdf (7 pages, 771718 bytes).
+Output written on gvv_filter.pdf (8 pages, 777091 bytes).
 PDF statistics:
- 584 PDF objects out of 1000 (max. 8388607)
- 373 compressed objects within 4 object streams
- 169 named destinations out of 1000 (max. 500000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 209 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
