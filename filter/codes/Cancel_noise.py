@@ -1,27 +1,25 @@
 import soundfile as sf
 from scipy import signal
 
-#read .wav file 
-input_signal,fs = sf.read('Sound_Noise.wav') 
+# Parameters
+input_file = "sister.wav"
+output_file = "sisterlfilter.wav"
+order = 4
+cutoff_freq = 5500.0
 
-#sampling frequency of Input signal
-sampl_freq=fs
+# Read input file
+input_signal, sampl_freq = sf.read(input_file)
 
-#order of the filter
-order=4   
+# Calculate cutoff frequency
+Wn = 2 * cutoff_freq / sampl_freq
 
-#cutoff frquency 4kHz
-cutoff_freq=4000.0  
+# Design butterworth filter
+b, a = signal.butter(order, Wn, "low")
 
-#digital frequency
-Wn=2*cutoff_freq/sampl_freq  
+# Filter the input signal
+output_signal = signal.lfilter(b, a, input_signal)
 
-# b and a are numerator and denominator polynomials respectively
-b, a = signal.butter(order,Wn, 'low') 
+# Write the output file
+sf.write(output_file, output_signal, sampl_freq)
 
-#filter the input signal with butterworth filter
-output_signal = signal.filtfilt(b, a, input_signal)
-#output_signal = signal.lfilter(b, a, input_signal)
-
-#write the output signal into .wav file
-sf.write('Sound_With_ReducedNoise.wav', output_signal, fs) 
+print(f"The output file '{output_file}' has been successfully written!")

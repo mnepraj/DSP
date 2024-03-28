@@ -35,7 +35,6 @@
 %\usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{mathtools}
-\usepackage{iithtlc}
 %\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
 
@@ -84,7 +83,7 @@ columns=fullflexible
 %\newtheorem{algorithm}{Algorithm}[section]
 %\newtheorem{cor}{Corollary}
 \newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
+		\newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 
 \bibliographystyle{IEEEtran}
@@ -108,7 +107,7 @@ columns=fullflexible
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
-\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
 \providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
@@ -117,7 +116,7 @@ columns=fullflexible
 
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \numberwithin{equation}{section}
@@ -136,18 +135,15 @@ columns=fullflexible
 %\numberwithin{figure}{subsection}
 
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
-     \def\rightbox#1{\makebox[0in][r]{#1}}
-     \def\centbox#1{\makebox[0in]{#1}}
-     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
-     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 
 \vspace{3cm}
 
-\title{ 
-\logo{
-Digital Signal Processing
-}
-%	\logo{Octave for Math Computing }
+\title{
+	Filters
 }
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
@@ -168,13 +164,13 @@ Digital Signal Processing
 % was not built to handle multiple paragraphs
 %
 
-\author{ G V V Sharma$^{*}$ %<-this  stops a space
-\thanks{*The author is with the Department
-of Electrical Engineering, Indian Institute of Technology, Hyderabad
-502285 India e-mail:  gadepall@iith.ac.in.  All content in the manuscript is 
-released under GNU GPL.  Free to use for anything. }% <-this % stops a space
-%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+\author{Prajwal M EE23BTECH11217$^{*}$ %<-this  stops a space
+	\thanks{*The author is with the Department
+		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+		502285 India e-mail:  gadepall@iith.ac.in.  All content in the manuscript is
+		released under GNU GPL.  Free to use for anything. }% <-this % stops a space
+	%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+	%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name
@@ -220,7 +216,6 @@ released under GNU GPL.  Free to use for anything. }% <-this % stops a space
 
 % make the title area
 \maketitle
-
 %\newpage
 
 \tableofcontents
@@ -237,7 +232,7 @@ released under GNU GPL.  Free to use for anything. }% <-this % stops a space
 \bigskip
 
 \begin{abstract}
-This manual provides a simple introduction to digital signal processing.
+	This manual provides a simple introduction to digital signal processing.
 \end{abstract}
 \section{Software Installation}
 Run the following commands
@@ -248,351 +243,497 @@ sudo pip install cffi pysoundfile
 \end{lstlisting}
 \section{Digital Filter}
 \begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item
-\label{prob:input}
-Download the sound file from  
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/ 
-EE1310/master/filter/codes/Sound_Noise.wav
+		,ref=\thesection.\theenumi]
+	\item
+	      \label{prob:input}
+	      Download the sound file from
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/sister.wav
 \end{lstlisting}
-%\href{http://tlc.iith.ac.in/img/sound/Sound_Noise.wav}{\url{http://tlc.iith.ac.in/img/sound/Sound_Noise.wav}}  
-%in the link given below.
-%\linebreak
-\item
-\label{prob:spectrogram}
-You will find a spectrogram at \href{https://academo.org/demos/spectrum-analyzer}{\url{https://academo.org/demos/spectrum-analyzer}}. 
-%\end{problem}
-%%
-%
-%%\onecolumn
-%%\input{./figs/fir}
-%\begin{problem}
-Upload the sound file that you downloaded in Problem \ref{prob:input} in the spectrogram  and play.  Observe the spectrogram. What do you find?
-\\
-%
-\solution There are a lot of yellow lines between 440 Hz to 5.1 KHz.  These represent the synthesizer key tones. Also, the key strokes
-are audible along with background noise.
-% By observing spectrogram, it clearly shows that tonal frequency is under 4kHz. And above 4kHz only noise is present.
-\item
-\label{prob:output}
-Write the python code for removal of out of band noise and execute the code.
-\\
-\solution
-\lstinputlisting{./codes/Cancel_noise.py}
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=\columnwidth]{enc_block_diag.png}
-%\caption{}
-%\label{fig:convolution encoder}
-%\end{figure}
-%\input{block_enc}
-\item
-The output of the python script in Problem \ref{prob:output} is the audio file Sound\_With\_ReducedNoise.wav. Play the file in the spectrogram in Problem \ref{prob:spectrogram}. What do you observe?
-\\
-\solution The key strokes as well as background noise is subdued in the audio.  Also,  the signal is blank for frequencies above 5.1 kHz.
+	\item
+	      \label{prob:spectrogram}
+	      You will find a spectrogram at \href{https://academo.org/demos/spectrum-analyzer}{\url{https://academo.org/demos/spectrum-analyzer}}.
+	      Upload the sound file that you downloaded in Problem \ref{prob:input} in the spectrogram  and play.  Observe the spectrogram. What do you find?
+	      \\
+	      %
+	      \solution There are a lot of yellow lines between 440 Hz to 5.5 KHz.  These represent the synthesizer key tones. Also, the key strokes
+	      are audible along with background noise.
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/sisterspectrum.png}
+		      \caption{spectrum of sister.wav}
+		      \label{fig:audiospectrum}
+	      \end{figure}
+	      By observing spectrogram, it clearly shows that tonal frequency is under 5.5kHz. And above 5.5kHz only noise is present.
+	\item
+	      \label{prob:output}
+	      Write the python code for removal of out of band noise and execute the code.
+	      \\
+	      \solution
+	      \lstinputlisting{./codes/Cancel_noise.py}
+
+	\item
+	      The output of the python script in Problem \ref{prob:output} is the audio file sisterlfilter.wav. Play the file in the spectrogram in Problem \ref{prob:spectrogram}. What do you observe?
+	      \\
+	      \solution The key strokes as well as background noise is subdued in the audio.  Also,  the signal is blank for frequencies above 5.5 kHz.
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/sisterlfilter.png}
+		      \caption{}
+		      \label{fig:filteraudiospectrum}
+	      \end{figure}
 
 \end{enumerate}
 \section{Difference Equation}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
-\item Let
-\begin{equation}
-x(n) = \cbrak{\underset{\uparrow}{1},2,3,4,2,1}
-\end{equation}
-Sketch $x(n)$.
-\item Let
-\begin{multline}
-\label{eq:iir_filter}
-y(n) + \frac{1}{2}y(n-1) = x(n) + x(n-2), 
-\\
- y(n) = 0, n < 0
-\end{multline}
-Sketch $y(n)$.
-\\
-\solution The following code yields Fig. \ref{fig:xnyn}.
-\begin{lstlisting}
-wget https://github.com/gadepall/EE1310/raw/master/filter/codes/xnyn.py
+	\item Let
+	      \begin{equation}
+		      x(n) = \cbrak{\underset{\uparrow}{1},2,3,4,2,1}
+	      \end{equation}
+	      Sketch $x(n)$.
+	\item Let
+	      \begin{multline}
+		      \label{eq:iir_filter}
+		      y(n) + \frac{1}{2}y(n-1) = x(n) + x(n-2),
+		      \\
+		      y(n) = 0, n < 0
+	      \end{multline}
+	      Sketch $y(n)$.
+	      \\
+	      \solution The following code yields Fig. \ref{fig:xnyn}.
+	      \begin{lstlisting}
+wget https://github.com/mnepraj/DSP/raw/master/filter/codes/xnyn.py
 \end{lstlisting}
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=\columnwidth]{./figs/xnyn}
-\end{center}
-\captionof{figure}{}
-\label{fig:xnyn}	
-\end{figure}
+	      \begin{figure}[!ht]
+		      \begin{center}
+			      \includegraphics[width=\columnwidth]{./figs/xnyn}
+		      \end{center}
+		      \captionof{figure}{}
+		      \label{fig:xnyn}
+	      \end{figure}
 
 \end{enumerate}
 \section{$Z$-transform}
 \begin{enumerate}[label=\thesection.\arabic*]
-\item The $Z$-transform of $x(n)$ is defined as
-%
-\begin{equation}
-\label{eq:z_trans}
-X(z)={\mathcal {Z}}\{x(n)\}=\sum _{n=-\infty }^{\infty }x(n)z^{-n}
-\end{equation}
-%
-Show that
-\begin{equation}
-\label{eq:shift1}
-{\mathcal {Z}}\{x(n-1)\} = z^{-1}X(z)
-\end{equation}
-and find
-\begin{equation}
-	{\mathcal {Z}}\{x(n-k)\} 
-\end{equation}
-\solution From \eqref{eq:z_trans},
-\begin{align}
-{\mathcal {Z}}\{x(n-k)\} &=\sum _{n=-\infty }^{\infty }x(n-1)z^{-n}
-\\
-&=\sum _{n=-\infty }^{\infty }x(n)z^{-n-1} = z^{-1}\sum _{n=-\infty }^{\infty }x(n)z^{-n}
-\end{align}
-resulting in \eqref{eq:shift1}. Similarly, it can be shown that
-%
-\begin{equation}
-\label{eq:z_trans_shift}
-	{\mathcal {Z}}\{x(n-k)\} = z^{-k}X(z)
-\end{equation}
+	\item The $Z$-transform of $x(n)$ is defined as
+	      %
+	      \begin{equation}
+		      \label{eq:z_trans}
+		      X(z)={\mathcal {Z}}\{x(n)\}=\sum _{n=-\infty }^{\infty }x(n)z^{-n}
+	      \end{equation}
+	      %
+	      Show that
+	      \begin{equation}
+		      \label{eq:shift1}
+		      {\mathcal {Z}}\{x(n-1)\} = z^{-1}X(z)
+	      \end{equation}
+	      and find
+	      \begin{equation}
+		      {\mathcal {Z}}\{x(n-k)\}
+	      \end{equation}
+	      \solution From \eqref{eq:z_trans},
+	      \begin{align}
+		      {\mathcal {Z}}\{x(n-k)\} & =\sum _{n=-\infty }^{\infty }x(n-1)z^{-n}
+		      \\
+		                               & =\sum _{n=-\infty }^{\infty }x(n)z^{-n-1} = z^{-1}\sum _{n=-\infty }^{\infty }x(n)z^{-n}
+	      \end{align}
+	      resulting in \eqref{eq:shift1}. Similarly, it can be shown that
+	      %
+	      \begin{equation}
+		      \label{eq:z_trans_shift}
+		      {\mathcal {Z}}\{x(n-k)\} = z^{-k}X(z)
+	      \end{equation}
 
-\item Find
-%
-\begin{equation}
-H(z) = \frac{Y(z)}{X(z)}
-\end{equation}
-%
-from  \eqref{eq:iir_filter} assuming that the $Z$-transform is a linear operation.
-\\
-\solution  Applying \eqref{eq:z_trans_shift} in \eqref{eq:iir_filter},
-\begin{align}
-Y(z) + \frac{1}{2}z^{-1}Y(z) &= X(z)+z^{-2}X(z)
-\\
-\implies \frac{Y(z)}{X(z)} &= \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}
-\label{eq:freq_resp}
-\end{align}
-%
-\item Find the Z transform of 
-\begin{equation}
-\delta(n)
-=
-\begin{cases}
-1 & n = 0
-\\
-0 & \text{otherwise}
-\end{cases}
-\end{equation}
-and show that the $Z$-transform of
-\begin{equation}
-\label{eq:unit_step}
-u(n)
-=
-\begin{cases}
-1 & n \ge 0
-\\
-0 & \text{otherwise}
-\end{cases}
-\end{equation}
-is
-\begin{equation}
-U(z) = \frac{1}{1-z^{-1}}, \quad \abs{z} > 1
-\end{equation}
-\solution It is easy to show that
-\begin{equation}
-\delta(n) \ztrans 1
-\end{equation}
-and from \eqref{eq:unit_step},
-\begin{align}
-U(z) &= \sum _{n= 0}^{\infty}z^{-n}
-\\
-&=\frac{1}{1-z^{-1}}, \quad \abs{z} > 1
-\end{align}
-using the fomula for the sum of an infinite geometric progression.
-%
-\item Show that 
-\begin{equation}
-\label{eq:anun}
-a^nu(n) \ztrans \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
-\end{equation}
-%
-\item 
-Let
-\begin{equation}
-H\brak{e^{\j \omega}} = H\brak{z = e^{\j \omega}}.
-\end{equation}
-Plot $\abs{H\brak{e^{\j \omega}}}$.  Comment.  $H(e^{\j \omega})$ is
-known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
-\\
-\solution The following code plots Fig. \ref{fig:dtft}.
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/dtft.py
+	\item Find
+	      %
+	      \begin{equation}
+		      H(z) = \frac{Y(z)}{X(z)}
+	      \end{equation}
+	      %
+	      from  \eqref{eq:iir_filter} assuming that the $Z$-transform is a linear operation.
+	      \\
+	      \solution  Applying \eqref{eq:z_trans_shift} in \eqref{eq:iir_filter},
+	      \begin{align}
+		      Y(z) + \frac{1}{2}z^{-1}Y(z) & = X(z)+z^{-2}X(z)
+		      \\
+		      \implies \frac{Y(z)}{X(z)}   & = \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}
+		      \label{eq:freq_resp}
+	      \end{align}
+	      %
+	\item Find the Z transform of
+	      \begin{equation}
+		      \delta(n)
+		      =
+		      \begin{cases}
+			      1 & n = 0
+			      \\
+			      0 & \text{otherwise}
+		      \end{cases}
+	      \end{equation}
+	      and show that the $Z$-transform of
+	      \begin{equation}
+		      \label{eq:unit_step}
+		      u(n)
+		      =
+		      \begin{cases}
+			      1 & n \ge 0
+			      \\
+			      0 & \text{otherwise}
+		      \end{cases}
+	      \end{equation}
+	      is
+	      \begin{equation}
+		      U(z) = \frac{1}{1-z^{-1}}, \quad \abs{z} > 1
+	      \end{equation}
+	      \solution It is easy to show that
+	      \begin{equation}
+		      \delta(n) \ztrans 1
+	      \end{equation}
+	      and from \eqref{eq:unit_step},
+	      \begin{align}
+		      U(z) & = \sum _{n= 0}^{\infty}z^{-n}
+		      \\
+		           & =\frac{1}{1-z^{-1}}, \quad \abs{z} > 1 \label{eq:unitstepztrans}
+	      \end{align}
+	      using the fomula for the sum of an infinite geometric progression.
+	      %
+	\item Show that
+	      \begin{equation}
+		      \label{eq:anun}
+		      a^nu(n) \ztrans \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
+	      \end{equation}
+	      %
+	      \solution
+	      \begin{align}
+		      x(n) & = a^n u(n)                                    \\
+		      x(n) & \ztrans X(z)                                  \\
+		      \notag\text{using \eqref{eq:z_trans},}               \\
+		      X(z) & = \sum_{n=-\infty}^{\infty} (a^n u(n))z^{-n}  \\
+		           & = \sum_{n=0}^{\infty} (a^{-1}z)^{-n}          \\
+		      \notag\text{using \eqref{eq:unitstepztrans},}        \\
+		           & = \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
+	      \end{align}
+
+	\item
+	      Let
+	      \begin{equation}
+		      H\brak{e^{j \omega}} = H\brak{z = e^{j \omega}}.
+	      \end{equation}
+	      Plot $\abs{H\brak{e^{j \omega}}}$.  Comment.  $H(e^{j \omega})$ is
+	      known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
+	      \\
+	      \solution
+
+	      Substituting $z = e^{j \omega}$ in \eqref{eq:freq_resp}, we get
+	      \begin{align}
+		      \left|H\brak{e^{j\omega}}\right| & = \left|\frac{1 + e^{-2j\omega}}{1 + \frac{1}{2}e^{-j\omega}}\right|                                                                         \\
+		                                       & = \sqrt{\frac{\brak{1 + \cos{2\omega}}^2 + \brak{\sin{2\omega}}^2}{\brak{1 + \frac{1}{2}\cos{\omega}}^2 + \brak{\frac{1}{2}\sin{\omega}}^2}} \\
+		                                       & = \frac{4|\cos{\omega}|}{\sqrt{5 + 4\cos{\omega}}}
+	      \end{align}
+	      \begin{align}
+		      \left|H\brak{e^{j\brak{\omega + 2\pi}}}\right| & = \frac{4|\cos\brak{\omega + 2\pi}|}{\sqrt{5 + 4\cos\brak{\omega + 2\pi}}} \\
+		                                                     & = \frac{4|\cos{\omega}|}{\sqrt{5 + 4\cos{\omega}}}                         \\
+		                                                     & = \left|H\brak{e^{j\omega}}\right|
+	      \end{align}
+	      Therefore its fundamental period is $2\pi$ , which verifies that DTFT of a signal is always periodic.
+
+	      The following code plots Fig. \ref{fig:dtft}.
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/dtft.py
 \end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/dtft}
-\caption{$\abs{H\brak{e^{\j\omega}}}$}
-\label{fig:dtft}
-\end{figure}
+	      \begin{figure}[!ht]
+		      \centering
+		      \includegraphics[width=\columnwidth]{./figs/dtft}
+		      \caption{$\abs{H\brak{e^{j\omega}}}$}
+		      \label{fig:dtft}
+	      \end{figure}
 \end{enumerate}
 
 \section{Impulse Response}
 \begin{enumerate}[label=\thesection.\arabic*]
-\item \label{prob:impulse_resp}
-Find an expression for $h(n)$ using $H(z)$, given that 
-%in Problem \ref{eq:ztransab} and \eqref{eq:anun}, given that
-\begin{equation}
-\label{eq:impulse_resp}
-h(n) \ztrans H(z)
-\end{equation}
-and there is a one to one relationship between $h(n)$ and $H(z)$. $h(n)$ is known as the {\em impulse response} of the
-system defined by \eqref{eq:iir_filter}.
-\\
-\solution From \eqref{eq:freq_resp},
-\begin{align}
-H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
-\\
-\implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
-\end{align}
-using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
-\item Sketch $h(n)$. Is it bounded? Convergent? 
-\\
-\solution The following code plots Fig. \ref{fig:hn}.
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hn.py
+	\item \label{prob:impulse_resp}
+	      Find an expression for $h(n)$ using $H(z)$, given that
+	      %in Problem \ref{eq:ztransab} and \eqref{eq:anun}, given that
+	      \begin{equation}
+		      \label{eq:impulse_resp}
+		      h(n) \ztrans H(z)
+	      \end{equation}
+	      and there is a one to one relationship between $h(n)$ and $H(z)$. $h(n)$ is known as the {\em impulse response} of the
+	      system defined by \eqref{eq:iir_filter}.
+	      \\
+	      \solution From \eqref{eq:freq_resp},
+	      \begin{align}
+		      H(z)          & = \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
+		      \\
+		      \implies h(n) & = \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
+	      \end{align}
+	      using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
+	\item Sketch $h(n)$. Is it bounded? Convergent?
+	      \\
+	      \solution The following code plots Fig. \ref{fig:hn}.
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/hn.py
 \end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/hn}
-\caption{$h(n)$ as the inverse of $H(z)$}
-\label{fig:hn}
-\end{figure}
-%
-\item The system with $h(n)$ is defined to be stable if
-\begin{equation}
-\sum_{n=-\infty}^{\infty}h(n) < \infty
-\end{equation}
-Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
-%
-\item 
-Compute and sketch $h(n)$ using 
-\begin{equation}
-\label{eq:iir_filter_h}
-h(n) + \frac{1}{2}h(n-1) = \delta(n) + \delta(n-2), 
-\end{equation}
-%
-This is the definition of $h(n)$.
-\\
-\solution The following code plots Fig. \ref{fig:hndef}. Note that this is the same as Fig. 
-\ref{fig:hn}. 
-%
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hndef.py
-\end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/hndef}
-\caption{$h(n)$ from the definition}
-\label{fig:hndef}
-\end{figure}
-%
-\item Compute 
-%
-\begin{equation}
-\label{eq:convolution}
-y(n) = x(n)*h(n) = \sum_{n=-\infty}^{\infty}x(k)h(n-k)
-\end{equation}
-%
-Comment. The operation in \eqref{eq:convolution} is known as
-{\em convolution}.
-%
-\\
-\solution The following code plots Fig. \ref{fig:ynconv}. Note that this is the same as 
-$y(n)$ in  Fig. 
-\ref{fig:xnyn}. 
-%
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/ynconv.py
-\end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ynconv}
-\caption{$y(n)$ from the definition of convolution}
-\label{fig:ynconv}
-\end{figure}
+	      \begin{figure}[!ht]
+		      \centering
+		      \includegraphics[width=\columnwidth]{./figs/hn}
+		      \caption{$h(n)$ as the inverse of $H(z)$}
+		      \label{fig:hn}
+	      \end{figure}
+	      %
+	\item The system with $h(n)$ is defined to be stable if
+	      \begin{equation}
+		      \sum_{n=-\infty}^{\infty}h(n) < \infty
+	      \end{equation}
+	      Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
+	      %
 
-\item Show that
-\begin{equation}
-y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
-\end{equation}
+	      \solution
+	      \begin{align}
+		      \sum_{n=-\infty}^{\infty} h(n) & = \sum_{n=-\infty}^{\infty} \left(\left(-\frac{1}{2}\right)^n u(n) + \left(-\frac{1}{2}\right)^{n-2} u(n-2)\right) \\
+		                                     & = \sum_{n=0}^{\infty} \left(-\frac{1}{2}\right)^n + \sum_{n=2}^{\infty} \left(-\frac{1}{2}\right)^{n-2}            \\
+		                                     & = \frac{2}{3} + \frac{2}{3} = \frac{4}{3} < \infty
+	      \end{align}
+	      Hence, the system is stable.
+
+	\item
+	      Compute and sketch $h(n)$ using
+	      \begin{equation}
+		      \label{eq:iir_filter_h}
+		      h(n) + \frac{1}{2}h(n-1) = \delta(n) + \delta(n-2),
+	      \end{equation}
+	      %
+	      This is the definition of $h(n)$.
+	      \\
+	      \solution The following code plots Fig. \ref{fig:hndef}. Note that this is the same as Fig.
+	      \ref{fig:hn}.
+	      %
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/hndef.py
+\end{lstlisting}
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{./figs/hndef}
+		      \caption{$h(n)$ from the definition}
+		      \label{fig:hndef}
+	      \end{figure}
+	      %
+	\item Compute
+	      %
+	      \begin{equation}
+		      \label{eq:convolution}
+		      y(n) = x(n)*h(n) = \sum_{n=-\infty}^{\infty}x(k)h(n-k)
+	      \end{equation}
+	      %
+	      Comment. The operation in \eqref{eq:convolution} is known as
+		      {\em convolution}.
+	      %
+	      \\
+	      \solution The following code plots Fig. \ref{fig:ynconv}. Note that this is the same as
+	      $y(n)$ in  Fig.
+	      \ref{fig:xnyn}.
+	      %
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/ynconv.py
+\end{lstlisting}
+	      \begin{figure}[!ht]
+		      \centering
+		      \includegraphics[width=\columnwidth]{./figs/ynconv}
+		      \caption{$y(n)$ from the definition of convolution}
+		      \label{fig:ynconv}
+	      \end{figure}
+
+	\item Show that
+	      \begin{equation}
+		      y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
+	      \end{equation}
+	      \solution
+	      In \eqref{eq:convolution}, we substitute $k = n - k$ to get
+	      \begin{align}
+		      y\brak{n} & = \sum_{k=-\infty}^{\infty}x\brak{k}h\brak{n - k}     \\
+		                & = \sum_{n - k=-\infty}^{\infty}x\brak{n - k}h\brak{k} \\
+		                & = \sum_{k=-\infty}^{\infty}x\brak{n - k}h\brak{k}
+	      \end{align}
+
 \end{enumerate}
 
 %
 \section{DFT and FFT}
 \begin{enumerate}[label=\thesection.\arabic*]
-\item
-Compute
-\begin{equation}
-X(k) \define \sum _{n=0}^{N-1}x(n) e^{-\j2\pi kn/N}, \quad k = 0,1,\dots, N-1
-\end{equation}
-and $H(k)$ using $h(n)$.
-\item Compute 
-\begin{equation}
-Y(k) = X(k)H(k)
-\end{equation}
-\item Compute
-\begin{equation}
- y\brak{n}={\frac {1}{N}}\sum _{k=0}^{N-1}Y\brak{k}\cdot e^{\j 2\pi kn/N},\quad n = 0,1,\dots, N-1
-\end{equation}
-\\
-\solution The following code plots Fig. \ref{fig:ynconv}. Note that this is the same as 
-$y(n)$ in  Fig. 
-\ref{fig:xnyn}. 
-%
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/yndft.py
-\end{lstlisting}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/yndft}
-\caption{$y(n)$ from the DFT}
-\label{fig:yndft}
-\end{figure}
+	\item
+	      Compute
+	      \begin{equation}
+		      X(k) \define \sum _{n=0}^{N-1}x(n) e^{-j2\pi kn/N}, \quad k = 0,1,\dots, N-1
+	      \end{equation}
+	      and $H(k)$ using $h(n)$.
+	\item Compute
+	      \begin{equation}
+		      Y(k) = X(k)H(k)
+		      \label{eq:fp}
+	      \end{equation}
+	\item Compute
+	      \begin{equation}
+		      y(n)={\frac {1}{N}}\sum _{k=0}^{N-1}Y(k)\cdot e^{j 2\pi kn/N},\quad n = 0,1,\dots, N-1
+		      \label{eq:inv-ft}
+	      \end{equation}
 
-\item Repeat the previous exercise by computing $X(k), H(k)$ and $y(n)$ through FFT and 
-IFFT.
-\item Wherever possible, express all the above equations as matrix equations.
+	      \solution The above three questions are solved using the code below.
+	      %
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/DFT.py
+\end{lstlisting}
+	      This code verifies the result by plotting the obtained result with the result obtained by IDFT.
+		  \begin{figure}[h]
+			\centering
+			\includegraphics[width=\columnwidth]{figs/ynIDFT.png}
+			\caption{$y(n)$ obtained from IDFT}
+			\label{fig:yn_verf_6.3}
+		\end{figure}
+	\item Repeat the previous exercise by computing $X(k), H(k)$ and $y(n)$ through FFT and IFFT.
+	      \solution The solution of this question can be found in the code below.
+	      %
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/FFT.py
+\end{lstlisting}
+	      This code verifies the result by plotting the obtained result with the result obtained by IFFT.
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/ynIFFTverified.png}
+		      \caption{$y(n)$ obtained from IDFT and IFFT is plotted and verified}
+		      \label{fig:yn_verf_5.4} 
+	      \end{figure}
+
+	\item Wherever possible, express all the above equations as matrix equations.\\
+	      \solution The DFT matrix is defined as :
+	      \begin{align}
+		      \mtx{W} =
+		      \begin{pmatrix}
+			      \omega^0 & \omega^0       & \ldots & \omega^0               \\
+			      \omega^0 & \omega^1       & \ldots & \omega^{N - 1}         \\
+			      \vdots   & \vdots         & \ddots & \vdots                 \\
+			      \omega^0 & \omega^{N - 1} & \ldots & \omega^{(N -1)(N - 1)}
+		      \end{pmatrix}
+	      \end{align}
+	      where $\omega=e^{-\frac{j2\pi}{N}}$ . Now any DFT equation can be written as
+	      \begin{align}
+		      \mtx{X} = \mtx{W}\mtx{x}
+	      \end{align}
+	      \noindent where
+	      \begin{align}
+		      \mtx{x} =
+		      \begin{pmatrix}
+			      x(0) \\ x(1) \\ \vdots \\ x(n - 1)
+		      \end{pmatrix}
+	      \end{align}
+	      \begin{align}
+		      \mtx{X} =
+		      \begin{pmatrix}
+			      X(0) \\ X(1) \\ \vdots \\ X(n - 1)
+		      \end{pmatrix}
+	      \end{align}
+	      Thus we can rewrite  \eqref{eq:fp} as:
+	      \begin{align}
+		      \mtx{Y} = \mtx{X}\odot\mtx{H} = \brak{\mtx{W}\mtx{x}}\odot\brak{\mtx{W}\mtx{h}}
+	      \end{align}
+	      where the $\odot$ represents the Hadamard product which performs element-wise multiplication.
+
+	      The below code computes $y\brak{n}$ by DFT Matrix and then plots it.
+	      %
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/DFTmatrix.py
+\end{lstlisting}
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/ynDFTmatrix.png}
+		      \caption{$y(n)$ obtained from DFT Matrix}
+		      \label{fig:yn_DFT_matrix}
+	      \end{figure}
 \end{enumerate}
 %
 \section{Exercises}
 
 Answer the following questions by looking at the python code in Problem \ref{prob:output}.
 \begin{enumerate}[label=\thesection.\arabic*]
-\item
-The command
-\begin{lstlisting}
-	output_signal = signal.lfilter(b, a, input_signal)
-	\end{lstlisting}
-in Problem \ref{prob:output} is executed through the following difference equation
-\begin{equation}
-\label{eq:iir_filter_gen}
- \sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k}
-\end{equation}
-%
-where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
-\textbf{signal.filtfilt} with your own routine and verify.
-%
-\item Repeat all the exercises in the previous sections for the above $a$ and $b$.
+	\item
+	      The command
+	      \begin{lstlisting}
+output_signal = signal.lfilter(b, a, input_signal)
+\end{lstlisting}
+	      in Problem \ref{prob:output} is executed through the following difference equation
+	      \begin{equation}
+		      \label{eq:iir_filter_gen}
+		      \sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k}
+	      \end{equation}
+	      %
+	      where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
+	      \textbf{signal.filtfilt} with your own routine and verify.
+	      %
 
-\item What is the sampling frequency of the input signal?
-\\
-\solution
-Sampling frequency(fs)=44.1kHZ.
-\item
-What is type, order and  cutoff-frequency of the above butterworth filter
-\\
-\solution
-The given butterworth filter is low pass with order=2 and cutoff-frequency=4kHz.
-%
-\item
-Modifying the code with different input parameters and to get the best possible output.
-%
+	      \solution
+	      The following code replaces signal.filtfilt with my routine 'mneprajfilter'.
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/filtfiltreplaced.py
+\end{lstlisting}
+
+	\item Repeat all the exercises in the previous sections for the above $a$ and $b$.
+	      %
+
+	      \solution
+	      Let sister.wav be the x(n) sampled at 48kHz.
+	      The code plots x(n).
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/xnexercise.py
+\end{lstlisting}
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/xnexercise.png}
+		      \caption{$x(n)$ (.wav file)}
+		      \label{fig:xn_exercise}
+	      \end{figure}
+	      taking Z-transform of \eqref{eq:iir_filter_gen}
+	      \begin{align}
+		      Y(z) \sum_{m=0}^{M} a(m)(z^{-1})^m & = X(z) \sum_{k=0}^{N} b(k)(z^{-1})^k                                  \\
+		      H(z)                               & = \frac{\sum_{k=0}^{N} b(k)(z^{-1})^k}{\sum_{m=0}^{M} a(m)(z^{-1})^m}
+	      \end{align}
+
+	      The code computes the frequency response of the filter and plots it.
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/hnexercise.py
+\end{lstlisting}
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/hnexercise.png}
+		      \caption{frequency response of filter}
+		      \label{fig:hn_exercise}
+	      \end{figure}
+	      \begin{align}
+		      Y(z) & = X(z)H(z)   \\
+		      y(n) & \ztrans Y(z)
+	      \end{align}
+
+	      The code computes y(n) and DFT of y(n) and plots it.
+	      \begin{lstlisting}
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/ynexercise.py
+\end{lstlisting}
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\columnwidth]{figs/ynexercise.png}
+		      \caption{$y(n)$ and its DFT}
+		      \label{fig:yn_exercise}
+	      \end{figure}
+
+
+
+	\item What is the sampling frequency of the input signal?
+	      \\
+	      \solution
+	      Sampling frequency(fs)=44.1kHZ.
+	\item
+	      What is type, order and  cutoff-frequency of the above butterworth filter modifying the code with different input parameters and to get the best possible output.
+	      \\
+	      \solution
+	      The given butterworth filter is low pass with order=4 and cutoff-frequency=5.5kHz.
+	      %
 \end{enumerate}
 
 \end{document}

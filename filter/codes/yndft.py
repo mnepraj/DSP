@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 #If using termux
-import subprocess
-import shlex
+# import subprocess
+# import shlex
 #end if
 
 
@@ -45,6 +45,6 @@ plt.grid()# minor
 #
 #If using termux
 plt.savefig('../figs/yndft.pdf')
-subprocess.run(shlex.split("termux-open ../figs/yndft.pdf"))
+# subprocess.run(shlex.split("termux-open ../figs/yndft.pdf"))
 #else
 #plt.show()
