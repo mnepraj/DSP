@@ -4,7 +4,7 @@ from scipy import signal
 from mneprajfilter import mneprajfilter  # Importing the mneprajfilter function
 
 # Read .wav file
-input_signal, fs = sf.read('sister.wav')
+input_signal, fs = sf.read('sound.wav')
 
 # Extract number of channels
 num_channels = input_signal.shape[1] if len(input_signal.shape) > 1 else 1
@@ -16,7 +16,7 @@ sampl_freq = fs
 order = 4
 
 # Cutoff frequency 6kHz
-cutoff_freq = 5500.0
+cutoff_freq = 6000
 
 # Digital frequency
 Wn = 2 * cutoff_freq / sampl_freq
@@ -35,4 +35,4 @@ with open('filter_coefficients.txt', 'w') as file:
 output_signal = mneprajfilter(a, b, input_signal, sampl_freq)
 
 # Write the output signal into .wav file
-sf.write('sistermnepraj.wav', output_signal, fs)
+sf.write('soundmnepraj.wav', output_signal, fs)

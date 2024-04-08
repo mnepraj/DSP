@@ -2,11 +2,10 @@ import soundfile as sf
 from scipy import signal
 
 # Parameters
-input_file = "sister.wav"
-output_file = "sisterlfilter.wav"
+input_file = "sound.wav"
+output_file = "soundlfilter.wav"
 order = 4
-cutoff_freq = 5500.0
-
+cutoff_freq = 6000
 # Read input file
 input_signal, sampl_freq = sf.read(input_file)
 

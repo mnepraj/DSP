@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.19)  28 MAR 2024 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.19)  8 APR 2024 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,96 +585,96 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./gvv_filter.aux)
 \openout1 = `gvv_filter.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 72.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 71.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-72.
+71.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 71.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-72.
+71.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 71.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-72.
+71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 71.
 LaTeX Font Info:    Trying to load font information for U+txexa on input line 7
-2.
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 7
-2.
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <6> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <6> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <9> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <9> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <12> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <14> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <20> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <20> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <22> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <22> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <24> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <24> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 72.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 71.
 
 -- Lines per column: 50 (exact).
-LaTeX Info: Redefining \celsius on input line 72.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 72.
+LaTeX Info: Redefining \celsius on input line 71.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 71.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 72.
-Package gensymb Info: Using \Omega for \ohm on input line 72.
+LaTeX Info: Redefining \ohm on input line 71.
+Package gensymb Info: Using \Omega for \ohm on input line 71.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -720,7 +720,7 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@width=\dimen198
 )
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -733,9 +733,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count309
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 71.
+LaTeX Info: Redefining \pageref on input line 71.
+LaTeX Info: Redefining \nameref on input line 71.
 
 (./gvv_filter.out) (./gvv_filter.out)
 \@outlinefile=\write3
@@ -749,33 +749,33 @@ LaTeX Info: Redefining \nameref on input line 72.
 \c@example=\count315
 \c@definition=\count316
 \c@rem=\count317
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 220.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22
-0.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 219.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 21
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 2
-20.
+19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 2
-20.
+19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 2
-20.
+19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 2
-20.
+19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
@@ -783,109 +783,109 @@ File: utxsyc.fd 2000/12/15 v3.1
 \tf@toc=\write4
 \openout4 = `gvv_filter.toc'.
 
-<figs/sisterspectrum.png, id=42, 831.105pt x 426.59375pt>
-File: figs/sisterspectrum.png Graphic file (type png)
-<use figs/sisterspectrum.png>
-Package pdftex.def Info: figs/sisterspectrum.png  used on input line 263.
-(pdftex.def)             Requested size: 252.0pt x 129.34605pt.
+<figs/sound.png, id=42, 863.225pt x 438.63875pt>
+File: figs/sound.png Graphic file (type png)
+<use figs/sound.png>
+Package pdftex.def Info: figs/sound.png  used on input line 262.
+(pdftex.def)             Requested size: 252.0pt x 128.0453pt.
 
-Underfull \hbox (badness 7777) in paragraph at lines 255--269
+Underfull \hbox (badness 7777) in paragraph at lines 254--268
 []\OT1/txr/m/n/12 You will find a spec-tro-gram at [][]$https :
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 255--269
+Underfull \hbox (badness 5374) in paragraph at lines 254--268
 \OT1/txr/m/n/12 / / academo . org / demos / spectrum-[]analyzer$[][]. Up-
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 273.
+nput line 272.
 (./codes/Cancel_noise.py
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1
-4.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figs/sisterspectrum.png>]
+ <./figs/sound.png>]
 LaTeX Font Info:    Trying to load font information for OMS+txr on input line 2
-5.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 25.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 24.
 )
-<figs/sisterlfilter.png, id=94, 837.62938pt x 421.575pt>
-File: figs/sisterlfilter.png Graphic file (type png)
-<use figs/sisterlfilter.png>
-Package pdftex.def Info: figs/sisterlfilter.png  used on input line 281.
-(pdftex.def)             Requested size: 252.0pt x 126.82727pt.
-<./figs/xnyn.pdf, id=96, 462.52798pt x 346.89601pt>
+<figs/soundlfilter.png, id=93, 878.28125pt x 432.61626pt>
+File: figs/soundlfilter.png Graphic file (type png)
+<use figs/soundlfilter.png>
+Package pdftex.def Info: figs/soundlfilter.png  used on input line 280.
+(pdftex.def)             Requested size: 252.0pt x 124.12866pt.
+<./figs/xnyn.pdf, id=95, 462.52798pt x 346.89601pt>
 File: ./figs/xnyn.pdf Graphic file (type pdf)
 <use ./figs/xnyn.pdf>
-Package pdftex.def Info: ./figs/xnyn.pdf  used on input line 309.
+Package pdftex.def Info: ./figs/xnyn.pdf  used on input line 308.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 315.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 315.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./figs/sisterlfilter.png> <./figs/xnyn.pdf>]
+ [2 <./figs/soundlfilter.png> <./figs/xnyn.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./figs/dtft.pdf, id=193, 462.52798pt x 346.89601pt>
+<./figs/dtft.pdf, id=192, 462.52798pt x 346.89601pt>
 File: ./figs/dtft.pdf Graphic file (type pdf)
 <use ./figs/dtft.pdf>
-Package pdftex.def Info: ./figs/dtft.pdf  used on input line 446.
+Package pdftex.def Info: ./figs/dtft.pdf  used on input line 445.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./figs/dtft.pdf>]
-<./figs/hn.pdf, id=273, 462.52798pt x 346.89601pt>
+<./figs/hn.pdf, id=272, 462.52798pt x 346.89601pt>
 File: ./figs/hn.pdf Graphic file (type pdf)
 <use ./figs/hn.pdf>
-Package pdftex.def Info: ./figs/hn.pdf  used on input line 479.
+Package pdftex.def Info: ./figs/hn.pdf  used on input line 478.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
 
-Overfull \hbox (6.29283pt too wide) detected at line 496
+Overfull \hbox (6.29283pt too wide) detected at line 495
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./figs/hndef.pdf, id=278, 462.52798pt x 346.89601pt>
+<./figs/hndef.pdf, id=277, 462.52798pt x 346.89601pt>
 File: ./figs/hndef.pdf Graphic file (type pdf)
 <use ./figs/hndef.pdf>
-Package pdftex.def Info: ./figs/hndef.pdf  used on input line 516.
+Package pdftex.def Info: ./figs/hndef.pdf  used on input line 515.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
-<./figs/ynconv.pdf, id=282, 462.52798pt x 346.89601pt>
+<./figs/ynconv.pdf, id=281, 462.52798pt x 346.89601pt>
 File: ./figs/ynconv.pdf Graphic file (type pdf)
 <use ./figs/ynconv.pdf>
-Package pdftex.def Info: ./figs/ynconv.pdf  used on input line 541.
+Package pdftex.def Info: ./figs/ynconv.pdf  used on input line 540.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
  [4 <./figs/hn.pdf> <./figs/hndef.pdf>]
-<figs/ynIDFT.png, id=390, 462.528pt x 346.896pt>
+<figs/ynIDFT.png, id=389, 462.528pt x 346.896pt>
 File: figs/ynIDFT.png Graphic file (type png)
 <use figs/ynIDFT.png>
-Package pdftex.def Info: figs/ynIDFT.png  used on input line 588.
+Package pdftex.def Info: figs/ynIDFT.png  used on input line 587.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/ynIFFTverified.png, id=391, 462.528pt x 346.896pt>
+<figs/ynIFFTverified.png, id=390, 462.528pt x 346.896pt>
 File: figs/ynIFFTverified.png Graphic file (type png)
 <use figs/ynIFFTverified.png>
-Package pdftex.def Info: figs/ynIFFTverified.png  used on input line 601.
+Package pdftex.def Info: figs/ynIFFTverified.png  used on input line 600.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
 
@@ -895,10 +895,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./figs/ynconv.pdf> <./figs/ynIDFT.png>]
-<figs/ynDFTmatrix.png, id=456, 462.528pt x 346.896pt>
+<figs/ynDFTmatrix.png, id=455, 462.528pt x 346.896pt>
 File: figs/ynDFTmatrix.png Graphic file (type png)
 <use figs/ynDFTmatrix.png>
-Package pdftex.def Info: figs/ynDFTmatrix.png  used on input line 647.
+Package pdftex.def Info: figs/ynDFTmatrix.png  used on input line 646.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
 
@@ -914,50 +914,45 @@ File: omltxr.fd 2000/12/15 v3.1
 LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 (Font)              Font shape `OML/txmi/m/it' tried instead on input line 10.
  [6 <./figs/ynIFFTverified.png> <./figs/ynDFTmatrix.png>])
-<figs/xnexercise.png, id=495, 867.24pt x 433.62pt>
+<figs/xnexercise.png, id=494, 867.24pt x 433.62pt>
 File: figs/xnexercise.png Graphic file (type png)
 <use figs/xnexercise.png>
-Package pdftex.def Info: figs/xnexercise.png  used on input line 691.
+Package pdftex.def Info: figs/xnexercise.png  used on input line 690.
 (pdftex.def)             Requested size: 252.0pt x 125.998pt.
-<figs/hnexercise.png, id=497, 462.528pt x 346.896pt>
+<figs/hnexercise.png, id=496, 462.528pt x 346.896pt>
 File: figs/hnexercise.png Graphic file (type png)
 <use figs/hnexercise.png>
-Package pdftex.def Info: figs/hnexercise.png  used on input line 707.
+Package pdftex.def Info: figs/hnexercise.png  used on input line 706.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/ynexercise.png, id=498, 1156.32pt x 578.16pt>
+<figs/ynexercise.png, id=497, 1156.32pt x 578.16pt>
 File: figs/ynexercise.png Graphic file (type png)
 <use figs/ynexercise.png>
-Package pdftex.def Info: figs/ynexercise.png  used on input line 722.
+Package pdftex.def Info: figs/ynexercise.png  used on input line 721.
 (pdftex.def)             Requested size: 252.0pt x 125.99579pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--739
-\OT1/txr/bx/n/12 Solution: \OT1/txr/m/n/12 The given but-ter-worth fil-ter
+Underfull \hbox (badness 2020) in paragraph at lines 733--738
+\OT1/txr/m/n/12 pass with or-der=4 and cutoff-frequency=6
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 734--739
-\OT1/txr/m/n/12 is low pass with or-der=4 and cutoff-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
 [7 <./figs/xnexercise.png> <./figs/hnexercise.png>] [8
 
  <./figs/ynexercise.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 740.
 (./gvv_filter.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 741.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 740.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 740.
 Package rerunfilecheck Info: File `gvv_filter.out' has not changed.
 (rerunfilecheck)             Checksum: 2154E13812F1013637C6C87519C101FD;346.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 740.
  ) 
 Here is how much of TeX's memory you used:
- 13062 strings out of 481239
- 195345 string characters out of 5920377
+ 13061 strings out of 481239
+ 195269 string characters out of 5920377
  799617 words of memory out of 5000000
  27851 multiletter control sequences out of 15000+600000
  606922 words of font info for 183 fonts, out of 8000000 for 9000
@@ -974,10 +969,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gvv_filter.pdf (8 pages, 777091 bytes).
+Output written on gvv_filter.pdf (8 pages, 667238 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 422 compressed objects within 5 object streams
- 209 named destinations out of 1000 (max. 500000)
+ 634 PDF objects out of 1000 (max. 8388607)
+ 420 compressed objects within 5 object streams
+ 208 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

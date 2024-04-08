@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
 
+# Sampling frequency
+Fs = 44100  # Assume a sampling frequency of 10 kHz
+
 # Read coefficients from the text file
 with open('filter_coefficients.txt', 'r') as file:
     lines = file.readlines()
@@ -14,27 +17,17 @@ with open('filter_coefficients.txt', 'r') as file:
 print("b coefficients:", b)
 print("a coefficients:", a)
 
-impulse = np.zeros(1000)
-impulse[0] = 1
-
-# Apply the filter to the impulse signal to get the filter's impulse response
-filter_impulse_response = signal.lfilter(b, a, impulse)
-
-# Take the FFT of the filter's impulse response to get its frequency response
-frequency_response = np.fft.fft(filter_impulse_response)
-
-# Frequency axis
-frequency_axis = np.fft.fftfreq(len(frequency_response))
-
-# Plot only positive frequencies
-positive_freq_response = frequency_response[:len(frequency_response)//2]
-positive_freq_axis = frequency_axis[:len(frequency_response)//2]
+# Compute the frequency response
+w, h = signal.freqz(b, a, worN=2000, fs=Fs)
 
 # Plot the frequency response
 plt.figure()
-plt.plot(positive_freq_axis, np.abs(positive_freq_response))
+plt.plot(w, np.abs(h))
 plt.title('Frequency Response of Butterworth Filter')
 plt.xlabel('Frequency (Hz)')
 plt.ylabel('Magnitude')
+plt.axvline(x=6000, color='r', linestyle='--', label='Cutoff Frequency')
+plt.legend()
 plt.grid()
 plt.savefig('../figs/hnexercise.png')
+plt.show()

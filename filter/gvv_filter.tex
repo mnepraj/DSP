@@ -1,5 +1,4 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+\documentclass[journal, 12pt, twocolumn]{IEEEtran}
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{xcolor}
@@ -248,7 +247,7 @@ sudo pip install cffi pysoundfile
 	      \label{prob:input}
 	      Download the sound file from
 	      \begin{lstlisting}
-wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/sister.wav
+wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/sound.wav
 \end{lstlisting}
 	\item
 	      \label{prob:spectrogram}
@@ -256,15 +255,15 @@ wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/sister.wa
 	      Upload the sound file that you downloaded in Problem \ref{prob:input} in the spectrogram  and play.  Observe the spectrogram. What do you find?
 	      \\
 	      %
-	      \solution There are a lot of yellow lines between 440 Hz to 5.5 KHz.  These represent the synthesizer key tones. Also, the key strokes
+	      \solution There are a lot of yellow lines between 440 Hz to 6 kHz.  These represent the synthesizer key tones. Also, the key strokes
 	      are audible along with background noise.
 	      \begin{figure}[h]
 		      \centering
-		      \includegraphics[width=\columnwidth]{figs/sisterspectrum.png}
-		      \caption{spectrum of sister.wav}
+		      \includegraphics[width=\columnwidth]{figs/sound.png}
+		      \caption{spectrum of sound.wav}
 		      \label{fig:audiospectrum}
 	      \end{figure}
-	      By observing spectrogram, it clearly shows that tonal frequency is under 5.5kHz. And above 5.5kHz only noise is present.
+	      By observing spectrogram, it clearly shows that tonal frequency is under 6 kHz. And above 6 kHz only noise is present.
 	\item
 	      \label{prob:output}
 	      Write the python code for removal of out of band noise and execute the code.
@@ -273,12 +272,12 @@ wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/sister.wa
 	      \lstinputlisting{./codes/Cancel_noise.py}
 
 	\item
-	      The output of the python script in Problem \ref{prob:output} is the audio file sisterlfilter.wav. Play the file in the spectrogram in Problem \ref{prob:spectrogram}. What do you observe?
+	      The output of the python script in Problem \ref{prob:output} is the audio file soundlfilter.wav. Play the file in the spectrogram in Problem \ref{prob:spectrogram}. What do you observe?
 	      \\
-	      \solution The key strokes as well as background noise is subdued in the audio.  Also,  the signal is blank for frequencies above 5.5 kHz.
+	      \solution The key strokes as well as background noise is subdued in the audio.  Also,  the signal is blank for frequencies above 6 kHz.
 	      \begin{figure}[h]
 		      \centering
-		      \includegraphics[width=\columnwidth]{figs/sisterlfilter.png}
+		      \includegraphics[width=\columnwidth]{figs/soundlfilter.png}
 		      \caption{}
 		      \label{fig:filteraudiospectrum}
 	      \end{figure}
@@ -681,7 +680,7 @@ wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/filtfiltr
 	      %
 
 	      \solution
-	      Let sister.wav be the x(n) sampled at 44.1kHz.
+	      Let sound.wav be the x(n) sampled at 44.1kHz.
 	      The code plots x(n).
 	      \begin{lstlisting}
 wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/xnexercise.py
@@ -734,7 +733,7 @@ wget https://raw.githubusercontent.com/mnepraj/DSP/master/filter/codes/ynexercis
 	      What is type, order and  cutoff-frequency of the above butterworth filter modifying the code with different input parameters and to get the best possible output.
 	      \\
 	      \solution
-	      The given butterworth filter is low pass with order=4 and cutoff-frequency=5.5kHz.
+	      The given butterworth filter is low pass with order=4 and cutoff-frequency=6 kHz.
 	      %
 \end{enumerate}
 

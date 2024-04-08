@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 # Load the WAV file
-sample_rate, data_stereo = wavfile.read('sister.wav')
+sample_rate, data_stereo = wavfile.read('sound.wav')
 
 # Extract individual channels
 channel1 = data_stereo[:, 0]  # Left channel

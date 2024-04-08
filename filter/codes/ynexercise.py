@@ -5,7 +5,7 @@ from scipy.fft import fft, ifft
 from scipy import signal
 
 # Load the WAV file
-sample_rate, data_stereo = wavfile.read('sister.wav')
+sample_rate, data_stereo = wavfile.read('sound.wav')
 print("WAV file loaded with sample rate:", sample_rate)
 
 # Read coefficients from the text file
